@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,54 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счетчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in3-78-fTH">
+                                <rect key="frame" x="16" y="242" width="361" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfr-lf-ZYv">
+                                <rect key="frame" x="129" y="642" width="135" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Увеличить"/>
+                                <connections>
+                                    <action selector="tapper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KCu-Iz-wbW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Yellow"/>
+                        <color key="backgroundColor" red="0.97555573453608246" green="0.97555573453608246" blue="0.97555573453608246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wfr-lf-ZYv" secondAttribute="trailing" constant="129" id="1Mb-Cn-BmB"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="top" secondItem="in3-78-fTH" secondAttribute="bottom" constant="362" id="AFg-6B-WJY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wfr-lf-ZYv" secondAttribute="trailing" constant="129" id="Ecj-Eh-VMR"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="IBQ-vV-J7B"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="Re5-aQ-SJp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wfr-lf-ZYv" secondAttribute="trailing" constant="129" id="VyG-b1-tB8"/>
+                            <constraint firstItem="in3-78-fTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Yt4-ZW-Ufw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wfr-lf-ZYv" secondAttribute="bottom" constant="340" id="bUf-Np-3pu"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="top" secondItem="in3-78-fTH" secondAttribute="bottom" constant="362" id="eOH-Y4-iHo"/>
+                            <constraint firstItem="in3-78-fTH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="gJg-HE-qsG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="in3-78-fTH" secondAttribute="trailing" constant="16" id="hph-A0-UKp"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="top" secondItem="in3-78-fTH" secondAttribute="bottom" constant="389" id="mhJ-b9-qlo"/>
+                            <constraint firstItem="Wfr-lf-ZYv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="mrT-FI-SAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wfr-lf-ZYv" secondAttribute="bottom" constant="109.67" id="ose-FZ-9XC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wfr-lf-ZYv" secondAttribute="bottom" constant="82.670000000000002" id="tNZ-1Q-lWH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="in3-78-fTH" id="Qt0-UE-tKS"/>
+                        <outlet property="tapButton" destination="Wfr-lf-ZYv" id="JCq-4q-G1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
 </document>
