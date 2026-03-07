@@ -7,24 +7,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
     
-    @IBOutlet var tapButton: UIButton!
+    //MARK: - Properties
+    private var score: Int = 0 {
+        didSet {
+            UserDefaultsService.shared.score = score    //сохраняем значение в userdefaults
+            updateScoreLabel()  //вызываем метод обновления лейбла
+        }
+    }
+
+    //MARK: - Outlets
+    
     @IBOutlet var scoreLabel: UILabel!
     
-    var score: Int = 0
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = "Значение счетчика: \(score)"
         
-        // Do any additional setup after loading the view.
+        fetchScore()
+        updateScoreLabel()
+    }
+    
+    //MARK: - Factory Mathods
+    
+    private func updateScoreLabel() {
+        scoreLabel.text = String(score) //обновляем лейбл со значением
+    }
+    
+    private func fetchScore() {
+        score = UserDefaultsService.shared.score    //загружаем сохраненное значение из user defaults
     }
 
-    @IBAction func tapper(_ sender: Any) {
+    //MARK: - Actions
+    
+    @IBAction func didTapPlusButton(_ sender: Any) {
         score += 1
-        scoreLabel.text = "Значение счетчика: \(score)"
+    }
+    
+    @IBAction func didTapMinusButton(_ sender: Any) {
+        if score > 0 {
+            score -= 1
+        }
+    }
+    
+    @IBAction func didTapResetButton(_ sender: Any) {
+        score = 0
     }
 }
-
